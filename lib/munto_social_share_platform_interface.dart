@@ -1,25 +1,25 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
-import 'appinio_social_share_method_channel.dart';
+import 'munto_social_share_method_channel.dart';
 
-abstract class AppinioSocialSharePlatform extends PlatformInterface {
-  /// Constructs a AppinioSocialSharePlatform.
-  AppinioSocialSharePlatform() : super(token: _token);
+abstract class MuntoSocialSharePlatform extends PlatformInterface {
+  /// Constructs a MuntoSocialSharePlatform.
+  MuntoSocialSharePlatform() : super(token: _token);
 
   static final Object _token = Object();
 
-  static AppinioSocialSharePlatform _instance =
-      MethodChannelAppinioSocialShare();
+  static MuntoSocialSharePlatform _instance =
+      MethodChannelMuntoSocialShare();
 
-  /// The default instance of [AppinioSocialSharePlatform] to use.
+  /// The default instance of [MuntoSocialSharePlatform] to use.
   ///
-  /// Defaults to [MethodChannelAppinioSocialShare].
-  static AppinioSocialSharePlatform get instance => _instance;
+  /// Defaults to [MethodChannelMuntoSocialShare].
+  static MuntoSocialSharePlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
-  /// platform-specific class that extends [AppinioSocialSharePlatform] when
+  /// platform-specific class that extends [MuntoSocialSharePlatform] when
   /// they register themselves.
-  static set instance(AppinioSocialSharePlatform instance) {
+  static set instance(MuntoSocialSharePlatform instance) {
     PlatformInterface.verifyToken(instance, _token);
     _instance = instance;
   }

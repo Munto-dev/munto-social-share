@@ -3,10 +3,10 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-import 'appinio_social_share_platform_interface.dart';
+import 'munto_social_share_platform_interface.dart';
 
-/// An implementation of [AppinioSocialSharePlatform] that uses method channels.
-class MethodChannelAppinioSocialShare extends AppinioSocialSharePlatform {
+/// An implementation of [MuntoSocialSharePlatform] that uses method channels.
+class MethodChannelMuntoSocialShare extends MuntoSocialSharePlatform {
   final String instagramDirect = "instagram_direct";
   final String instagramFeed = "instagram_post";
   final String instagramFeedFiles = "instagram_post_files";
@@ -37,7 +37,7 @@ class MethodChannelAppinioSocialShare extends AppinioSocialSharePlatform {
 
   /// The method channel used to interact with the native platform.
   @visibleForTesting
-  final methodChannel = const MethodChannel('appinio_social_share');
+  final methodChannel = const MethodChannel('munto_social_share');
 
   @override
   Future<Map<String, bool>> getInstalledApps() async {
@@ -59,7 +59,7 @@ class MethodChannelAppinioSocialShare extends AppinioSocialSharePlatform {
     if (Platform.isAndroid) return "Not implemented for android";
     String? resp;
     try {
-      resp = (await const MethodChannel('appinio_social_share_tiktok')
+      resp = (await const MethodChannel('munto_social_share_tiktok')
               .invokeMethod<String>(tiktokPost, {
             "videoFile": filePath,
             "redirectUrl": redirectUrl,

@@ -30,7 +30,7 @@ public class SwiftAppinioSocialSharePlugin: NSObject, FlutterPlugin, SharingDele
 
     
   public static func register(with registrar: FlutterPluginRegistrar) {
-    let channel = FlutterMethodChannel(name: "appinio_social_share", binaryMessenger: registrar.messenger())
+    let channel = FlutterMethodChannel(name: "munto_social_share", binaryMessenger: registrar.messenger())
     let instance = SwiftAppinioSocialSharePlugin()
     registrar.addMethodCallDelegate(instance, channel: channel)
   }

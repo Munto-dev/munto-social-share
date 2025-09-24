@@ -1,6 +1,6 @@
 //
 //  MyActivityItemSource.swift
-//  appinio_social_share
+//  munto_social_share
 //
 //  Created by Mujeeb khan on 23.09.22.
 //

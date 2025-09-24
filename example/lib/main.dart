@@ -1,6 +1,6 @@
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:appinio_social_share/appinio_social_share.dart';
+import 'package:munto_social_share/munto_social_share.dart';
 import 'dart:io';
 
 void main() {
@@ -27,7 +27,7 @@ class SocialShareHomePage extends StatefulWidget {
 }
 
 class _SocialShareHomePageState extends State<SocialShareHomePage> {
-  AppinioSocialShare appinioSocialShare = AppinioSocialShare();
+  MuntoSocialShare muntoSocialShare = MuntoSocialShare();
 
   @override
   Widget build(BuildContext context) {
@@ -153,7 +153,7 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
         String filePath = result.paths[0]!;
 
         if (Platform.isIOS) {
-          await appinioSocialShare.iOS.shareToInstagramStory(
+          await muntoSocialShare.iOS.shareToInstagramStory(
             "your_facebook_app_id", // Facebook App ID가 필요합니다
             stickerImage: filePath, // 스티커 이미지
             backgroundImage: filePath, // 배경 이미지 (선택사항)
@@ -161,7 +161,7 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
             backgroundBottomColor: "#00FF00", // 배경 색상 (선택사항)
           );
         } else {
-          await appinioSocialShare.android.shareToInstagramStory(
+          await muntoSocialShare.android.shareToInstagramStory(
             "your_facebook_app_id", // Facebook App ID가 필요합니다
             stickerImage: filePath, // 스티커 이미지
             backgroundImage: filePath, // 배경 이미지 (선택사항)
@@ -189,10 +189,10 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
 
         if (Platform.isIOS) {
           // iOS: shareToInstagramFeed(String imagePath) - 하나의 이미지만
-          await appinioSocialShare.iOS.shareToInstagramFeed(filePaths.first);
+          await muntoSocialShare.iOS.shareToInstagramFeed(filePaths.first);
         } else {
           // Android: shareFilesToInstagramFeed(List<String> imagePaths) - 여러 이미지
-          await appinioSocialShare.android.shareFilesToInstagramFeed(filePaths);
+          await muntoSocialShare.android.shareFilesToInstagramFeed(filePaths);
         }
 
         _showSuccessMessage("Instagram Feed 공유 완료!");
@@ -214,10 +214,10 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
 
         if (Platform.isIOS) {
           // iOS: shareToInstagramReels(String videoPath) - 하나의 비디오만
-          await appinioSocialShare.iOS.shareToInstagramReels(filePaths.first);
+          await muntoSocialShare.iOS.shareToInstagramReels(filePaths.first);
         } else {
           // Android: shareToInstagramReels(List<String> videoPaths) - 여러 비디오
-          await appinioSocialShare.android.shareToInstagramReels(filePaths);
+          await muntoSocialShare.android.shareToInstagramReels(filePaths);
         }
 
         _showSuccessMessage("Instagram Reel 공유 완료!");
@@ -231,10 +231,9 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
   void shareToInstagramDirect() async {
     try {
       if (Platform.isIOS) {
-        await appinioSocialShare.iOS
-            .shareToInstagramDirect("안녕하세요! 테스트 메시지입니다.");
+        await muntoSocialShare.iOS.shareToInstagramDirect("안녕하세요! 테스트 메시지입니다.");
       } else {
-        await appinioSocialShare.android
+        await muntoSocialShare.android
             .shareToInstagramDirect("안녕하세요! 테스트 메시지입니다.");
       }
 
@@ -255,10 +254,10 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
 
         if (Platform.isIOS) {
           // iOS: shareImageToWhatsApp(String filePath) - 이미지만
-          await appinioSocialShare.iOS.shareImageToWhatsApp(filePath);
+          await muntoSocialShare.iOS.shareImageToWhatsApp(filePath);
         } else {
           // Android: shareToWhatsapp(String message, String? filePath)
-          await appinioSocialShare.android
+          await muntoSocialShare.android
               .shareToWhatsapp("테스트 메시지입니다!", filePath);
         }
 
@@ -280,10 +279,10 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
             result.paths.where((path) => path != null).cast<String>().toList();
 
         if (Platform.isIOS) {
-          await appinioSocialShare.iOS
+          await muntoSocialShare.iOS
               .shareToFacebook("페이스북 테스트 메시지입니다!", filePaths);
         } else {
-          await appinioSocialShare.android
+          await muntoSocialShare.android
               .shareToFacebook("페이스북 테스트 메시지입니다!", filePaths);
         }
 
@@ -298,7 +297,7 @@ class _SocialShareHomePageState extends State<SocialShareHomePage> {
   void checkInstalledApps() async {
     try {
       Map<String, bool> installedApps =
-          await appinioSocialShare.getInstalledApps();
+          await muntoSocialShare.getInstalledApps();
 
       if (!mounted) return; // mounted 체크 추가
 

@@ -1,4 +1,4 @@
-name: appinio_social_share
+name: munto_social_share
 description: Supports sharing text, images, files and text with image to social media (Facebook, Instagram, Instagram Story, Messenger, Telegram, WhatsApp, Twitter, Tiktok, SMS, System, etc.).
 version: 1.0.0
 homepage: https://github.com/munto/munto-social-share
@@ -22,7 +22,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.appinio.socialshare.appinio_social_share
+        package: com.munto.socialshare.munto_social_share
         pluginClass: AppinioSocialSharePlugin
       ios:
         pluginClass: AppinioSocialSharePlugin

@@ -1,6 +1,6 @@
-# appinio_social_share_example
+# munto_social_share_example
 
-Demonstrates how to use the appinio_social_share plugin.
+Demonstrates how to use the munto_social_share plugin.
 
 ## Getting Started
 

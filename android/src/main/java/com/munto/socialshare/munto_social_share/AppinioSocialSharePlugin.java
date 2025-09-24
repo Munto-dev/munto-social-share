@@ -1,4 +1,4 @@
-package com.appinio.socialshare.appinio_social_share;
+package com.munto.socialshare.munto_social_share;
 
 import android.app.Activity;
 import android.content.Context;
@@ -6,7 +6,7 @@ import android.util.Log;
 
 import androidx.annotation.NonNull;
 
-import com.appinio.socialshare.appinio_social_share.utils.SocialShareUtil;
+import com.munto.socialshare.munto_social_share.utils.SocialShareUtil;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -55,7 +55,7 @@ public class AppinioSocialSharePlugin implements FlutterPlugin, MethodCallHandle
     @Override
     public void onAttachedToEngine(@NonNull FlutterPluginBinding flutterPluginBinding) {
         context = flutterPluginBinding.getApplicationContext();
-        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "appinio_social_share");
+        channel = new MethodChannel(flutterPluginBinding.getBinaryMessenger(), "munto_social_share");
         channel.setMethodCallHandler(this);
         socialShareUtil = new SocialShareUtil();
     }

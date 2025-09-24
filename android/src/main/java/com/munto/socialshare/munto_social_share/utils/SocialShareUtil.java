@@ -1,4 +1,4 @@
-package com.appinio.socialshare.appinio_social_share.utils;
+package com.munto.socialshare.munto_social_share.utils;
 
 import android.app.Activity;
 import android.content.ClipData;

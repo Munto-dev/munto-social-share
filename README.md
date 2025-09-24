@@ -8,7 +8,7 @@ Flutter package for social sharing functionality compatible with `facebook_app_e
 
 ```yaml
 dependencies:
-  appinio_social_share:
+  munto_social_share:
     git:
       url: https://github.com/munto/munto-social-share.git
 ```
@@ -20,7 +20,7 @@ dependencies:
 
 ---
 
-```appinio_social_share``` supports sharing files to social media (Facebook, Instagram, Instagram Story, Messenger, Telegram, WhatsApp, Twitter, Tiktok, SMS, System, etc.). If you want to share text, file, image, text with image or text with files then this plugin is all you need.
+```munto_social_share``` supports sharing files to social media (Facebook, Instagram, Instagram Story, Messenger, Telegram, WhatsApp, Twitter, Tiktok, SMS, System, etc.). If you want to share text, file, image, text with image or text with files then this plugin is all you need.
 
 <br />
 
@@ -322,7 +322,7 @@ import Photos
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
       let cntrl : FlutterViewController = self.window?.rootViewController as! FlutterViewController
-      let tiktok_channel = FlutterMethodChannel(name: "appinio_social_share_tiktok", binaryMessenger: cntrl.binaryMessenger)
+      let tiktok_channel = FlutterMethodChannel(name: "munto_social_share_tiktok", binaryMessenger: cntrl.binaryMessenger)
           
       tiktok_channel.setMethodCallHandler(
         {
